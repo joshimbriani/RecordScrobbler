@@ -15,8 +15,8 @@ angular.module('discogsscrobblerApp')
         templateUrl: 'app/main/random.html',
         controller: 'RandomCtrl'
      })
-      .when('/album/:albumid', {
-	templateUrl: 'app/main/album.html',
-	controller: 'AlbumCtrl'     
+      .when('/release/:releaseid', {
+	templateUrl: 'app/main/release.html',
+	controller: 'ReleaseCtrl'     
       });
   });

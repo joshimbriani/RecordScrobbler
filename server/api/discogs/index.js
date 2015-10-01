@@ -16,8 +16,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/collection', function(req, res) {
-	dis.user().collection().releases('maverick2007', 0, {page: 1, per_page: 75}, function(err, data){
-		res.send(data);
+	var page = 1;
+	if (req.query.page > 0) page = req.query.page;  
+	var perpage = 100;
+	if (req.query.perpage > 0) perpage = req.query.perpage;
+	dis.user().collection().releases('maverick2007', 0, {page: page, per_page: perpage}, function(err, data){
+		res.send(data.releases);
 	});
 });
 
